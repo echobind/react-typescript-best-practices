@@ -8,6 +8,7 @@ Our suggested best practices when using React with TypeScript.
 * [Components](#components)
 * [Props](#props)
 * [Hooks](#hooks)
+* [Third Party Libraries](third-party-libraries)
 * [FAQ](#faq)
   * [Contributing](#contributing)
   * [License](#license)
@@ -64,6 +65,18 @@ type User = {
 }
 const [user, setUser] = useState<User | null>(null);
 ```
+
+### Third Party Libraries
+
+Look for types by running `yarn add -D @types/<package-name>`. If they don't exist, create a declaration file at the root:
+```typescript
+// Name of file: package-name.d.ts
+
+declare module PackageName;
+```
+
+This won't provide type safety but it will unblock you. Later, when you have time, come back and create a proper [declaration file](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html). 
+
 
 ## FAQ
 
